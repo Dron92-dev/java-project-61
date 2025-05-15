@@ -1,0 +1,16 @@
+# Gradle
+.gradle/
+build/
+out/
+app/build/
+
+# IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# System
+.DS_Store
+*.log
+*.swp

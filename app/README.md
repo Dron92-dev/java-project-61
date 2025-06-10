@@ -1,0 +1,1 @@
+[![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=Dron92-dev_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Dron92-dev_java-project-61)

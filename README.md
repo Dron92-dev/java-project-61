@@ -1,4 +1,5 @@
-#Brain Games
+Brain Games
+
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=Dron92-dev_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Dron92-dev_java-project-61)
 [![SonarQube](https://github.com/Dron92-dev/java-project-61/actions/workflows/build.yml/badge.svg)](https://github.com/Dron92-dev/java-project-61/actions/workflows/build.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Dron92-dev_java-project-61&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Dron92-dev_java-project-61)

@@ -12,16 +12,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          path: app  # Ключевое изменение: клонируем в папку app/
+          # УДАЛИТЕ path: app (это вызывает проблемы!)
 
-      - name: Verify Gradle files
+      - name: Verify environment
         run: |
-          echo "=== Проверка файлов в app/ ==="
+          echo "=== Структура проекта ==="
+          ls -la
+          echo "=== Содержимое app/ ==="
           ls -la app/
-          echo "=== Права на gradlew ==="
-          ls -la app/gradlew
-          echo "=== Java версия ==="
-          java -version
+          [ -f "app/gradlew" ] || { echo "ERROR: gradlew not found!"; exit 1; }
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -30,14 +29,13 @@ jobs:
           distribution: 'zulu'
 
       - name: Build with Gradle
+        working-directory: ./app  # Лучше чем cd
         run: |
-          cd app
           chmod +x gradlew
           ./gradlew build --no-daemon
 
       - name: SonarQube Analysis
+        working-directory: ./app
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          cd app
-          ./gradlew sonar --info --no-daemon
+        run: ./gradlew sonar --info --no-daemon

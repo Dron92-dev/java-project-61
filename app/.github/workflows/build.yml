@@ -10,35 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      # Новый шаг: проверка существования gradlew
-      - name: Verify Gradle Wrapper
-        run: |
-          ls -la
-          [ -f "./gradlew" ] || { echo "❌ Error: gradlew not found!"; exit 1; }
-          chmod +x ./gradlew
-          ./gradlew --version
+      # Переходим в нужную директорию
+      - name: Change directory
+        run: cd app && ls -la
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: 17
-          distribution: 'zulu'
-
-      - name: Cache Gradle packages
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
 
       - name: Build
-        run: ./gradlew build --no-daemon
+        working-directory: ./app  # <-- Ключевое изменение!
+        run: |
+          chmod +x gradlew
+          ./gradlew build
 
       - name: SonarQube Analysis
+        working-directory: ./app
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew sonar --info --no-daemon
+        run: ./gradlew sonar --info

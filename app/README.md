@@ -33,3 +33,7 @@ make test
 ## Demo Game №2 "Проверка на четность"
 
 [![asciicast](https://asciinema.org/a/Wq5JyopB7Gktbn0hdnq6H2MMZ.svg)](https://asciinema.org/a/Wq5JyopB7Gktbn0hdnq6H2MMZ)
+
+## Demo Game №3 "Калькулятор"
+
+[![asciicast](https://asciinema.org/a/Sjb5i2truj5kICJHgUioTV0ZD.svg)](https://asciinema.org/a/Sjb5i2truj5kICJHgUioTV0ZD)

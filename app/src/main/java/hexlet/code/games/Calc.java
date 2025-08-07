@@ -24,9 +24,15 @@ public class Calc {
 
             int correctAnswer = 0;
             switch(op) {
-                case "+" -> correctAnswer = number1 + number2;
-                case "-" -> correctAnswer = number1 - number2;
-                case "*" -> correctAnswer = number1 * number2;
+                case "+":
+                    correctAnswer = number1 + number2;
+                    break;
+                case "-":
+                    correctAnswer = number1 - number2;
+                    break;
+                case "*":
+                    correctAnswer = number1 * number2;
+                    break;
             }
             rounds[i][0] = number1 + op + number2;
             rounds[i][1] = Integer.toString(correctAnswer);

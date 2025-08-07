@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -17,37 +14,44 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
 
         int choice = scanner.nextInt();
         scanner.nextLine();
+        String userName;
 
         switch (choice) {
-            case 1 -> {
+            case 1:
                 System.out.println();
                 Cli.greetUser();
-            }
-            case 2 -> {
+                break;
+            case 2:
                 System.out.println();
-                String userName = Cli.greetUser();
+                userName = Cli.greetUser();
                 Even.start(scanner, userName);
-            }
-            case 3 -> {
+                break;
+            case 3:
                 System.out.println();
-                String userName = Cli.greetUser();
+                userName = Cli.greetUser();
                 Calc.start(scanner, userName);
-            }
-            case 4 -> {
+                break;
+            case 4:
                 System.out.println();
-                String userName = Cli.greetUser();
-                GCD.start(scanner,userName);
-            }
-            case 5 -> {
+                userName = Cli.greetUser();
+                GCD.start(scanner, userName);
+                break;
+            case 5:
                 System.out.println();
-                String userName = Cli.greetUser();
-                Progression.start(scanner,userName);
-            }
+                userName = Cli.greetUser();
+                Progression.start(scanner, userName);
+                break;
+            case 6:
+                System.out.println();
+                userName = Cli.greetUser();
+                Prime.start(scanner, userName);
+                break;
         }
         scanner.close();
     }

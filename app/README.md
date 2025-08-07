@@ -45,3 +45,7 @@ make test
 ## Demo Game №5 "Арифметическая прогрессия"
 
 [![asciicast](https://asciinema.org/a/N7HH6FPvimfVgKklKcD4Uqc8D.svg)](https://asciinema.org/a/N7HH6FPvimfVgKklKcD4Uqc8D)
+
+## Demo Game №6 "Простое ли число?"
+
+[![asciicast](https://asciinema.org/a/aCQJr1vfyadgx2XiWGmEN73IO.svg)](https://asciinema.org/a/aCQJr1vfyadgx2XiWGmEN73IO)

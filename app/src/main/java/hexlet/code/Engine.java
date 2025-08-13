@@ -1,28 +1,34 @@
 package hexlet.code;
 
+import hexlet.code.util.Constants;
+
+import java.util.Random;
 import java.util.Scanner;
 
+import static hexlet.code.util.Constants.Engine.ROUND_COUNTS;
+
 public class Engine {
-    public static final int ROUND_COUNTS = 3;
-    public static void run(String rules, Scanner scanner, String userName, String[][] roundsData) {
+    public final static Random random = new Random();
+    public static void run(String rules, String[][] questionsAndAnswers) {
+        Scanner scanner1 = new Scanner(System.in);
         System.out.println(rules);
 
         for (int i = 0; i < ROUND_COUNTS; i++) {
-            String question = roundsData[i][0];
-            String correctAnswer = roundsData[i][1];
+            String question = questionsAndAnswers[i][Constants.General.QUESTION_INDEX];
+            String correctAnswer = questionsAndAnswers[i][Constants.General.ANSWER_INDEX];
 
-            System.out.println("Question: " + question);
-            System.out.print("Your answer: ");
-            String userAnswer = scanner.nextLine();
+            System.out.println(Constants.Engine.QUESTION + question);
+            System.out.print(Constants.Engine.ANSWER);
+            String Answer = scanner1.nextLine();
 
-            if (!userAnswer.equals(correctAnswer)) {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'");
-                System.out.println("Let's try again " + userName + "!");
+            if (Answer.toLowerCase().equals(correctAnswer)) {
+                System.out.println(Constants.Engine.CORRECT_MESSAGE);
+            } else {
+                System.out.println("'" + Answer + "'" + Constants.Engine.WRONG_ANSWER_MESSAGE + "'" + correctAnswer + "'");
+                System.out.println(Constants.Engine.TRY_AGAIN_MESSAGE + Cli.userName + "!");
                 return;
             }
-            System.out.println("Correct!");
         }
-
-        System.out.println("Congratulations, " + userName + "!");
+        System.out.println(Constants.Engine.CONGRATS_MESSAGE + Cli.userName + "!");
     }
 }

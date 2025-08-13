@@ -1,6 +1,11 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+import hexlet.code.util.Constants;
 
 import java.util.Scanner;
 
@@ -8,49 +13,49 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("3 - Calc");
-        System.out.println("4 - GCD");
-        System.out.println("5 - Progression");
-        System.out.println("6 - Prime");
-        System.out.println("0 - Exit");
-        System.out.print("Your choice: ");
+        System.out.println(Constants.App.INPUT_GAME_NUMBER);
+        System.out.println(Constants.App.MENU_GREET);
+        System.out.println(Constants.App.MENU_EVEN);
+        System.out.println(Constants.App.MENU_CALC);
+        System.out.println(Constants.App.MENU_GCD);
+        System.out.println(Constants.App.MENU_PROGRESSION);
+        System.out.println(Constants.App.MENU_PRIME);
+        System.out.println(Constants.App.MENU_EXIT);
+        System.out.print(Constants.App.YOUR_CHOICE);
 
         int choice = scanner.nextInt();
         scanner.nextLine();
-        String userName;
+
 
         switch (choice) {
-            case 1:
-                System.out.println();
+            case Constants.App.GREET:
                 Cli.greetUser();
                 break;
-            case 2:
-                System.out.println();
-                userName = Cli.greetUser();
-                Even.start(scanner, userName);
+            case Constants.App.EVEN:
+                Cli.greetUser();
+                Even.playEven();
                 break;
-            case 3:
-                System.out.println();
-                userName = Cli.greetUser();
-                Calc.start(scanner, userName);
+            case Constants.App.CALC:
+                Cli.greetUser();
+                Calc.playCalc();
                 break;
-            case 4:
-                System.out.println();
-                userName = Cli.greetUser();
-                GCD.start(scanner, userName);
+            case Constants.App.GCD:
+                Cli.greetUser();
+                GCD.playGCD();
                 break;
-            case 5:
-                System.out.println();
-                userName = Cli.greetUser();
-                Progression.start(scanner, userName);
+            case Constants.App.PROGRESSION:
+                Cli.greetUser();
+                Progression.playProgression();
                 break;
-            case 6:
-                System.out.println();
-                userName = Cli.greetUser();
-                Prime.start(scanner, userName);
+            case Constants.App.PRIME:
+                Cli.greetUser();
+                Prime.playPrime();
+                break;
+            case Constants.App.EXIT:
+                System.out.println("You have left the game!");
+                break;
+            default:
+                System.out.println("Incorrect information entered");
                 break;
         }
         scanner.close();

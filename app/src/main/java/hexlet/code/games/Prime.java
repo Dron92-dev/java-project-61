@@ -1,48 +1,34 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.util.Constants;
 
-import java.util.Random;
-import java.util.Scanner;
+import static hexlet.code.Engine.random;
 
 public class Prime {
-    public static void start(Scanner scanner, String userName) {
-        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] roundsData = prepareRoundData();
-        Engine.run(rules, scanner, userName, roundsData);
-    }
+    public static void playPrime() {
+        String[][] rounds = new String[Constants.Engine.ROUND_COUNTS][Constants.General.ROUND_DATA_SIZE];
 
-    private static String[][] prepareRoundData() {
-        String[][] rounds = new String[Engine.ROUND_COUNTS][2];
+        for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
 
-        for (int i = 0; i < Engine.ROUND_COUNTS; i++) {
-
-            Random random = new Random();
             int number = random.nextInt(11);
-            String correctAnswer = prime(number);
+            String correctAnswer = isPrime(number) ? Constants.Prime.PRIME_YES : Constants.Prime.PRIME_NO;
 
-            rounds[i][0] = Integer.toString(number);
-            rounds[i][1] = correctAnswer.toLowerCase();
+            rounds[i][Constants.General.QUESTION_INDEX] = Integer.toString(number);
+            rounds[i][Constants.General.ANSWER_INDEX] = correctAnswer.toLowerCase();
         }
-        return rounds;
+        Engine.run(Constants.Prime.PRIME_RULES, rounds);
     }
 
-    private static String prime(int n) {
-        String result = "Yes";
-        if (n < 2) {
-            result = "No";
-        } else if (n == 2) {
-            result = "Yes";
-        } else if (n % 2 == 0) {
-            result = "No";
-        } else {
-            for (int i = 3; i * i <= n; i += 2) {
-                if (n % i == 0) {
-                    result = "No";
-                    break;
-                }
+    private static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
             }
         }
-        return result;
+        return true;
     }
 }

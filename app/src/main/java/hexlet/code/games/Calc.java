@@ -1,42 +1,36 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.util.Constants;
 
-import java.util.Random;
-import java.util.Scanner;
+import static hexlet.code.Engine.random;
 
 public class Calc {
-    public static void start(Scanner scanner, String userName) {
+    public static void playCalc() {
         String rules = "What is the result of the expression?";
-        String[][] roundsData = prepareRoundData();
-        Engine.run(rules, scanner, userName, roundsData);
-    }
+        String[][] rounds = new String[Constants.Engine.ROUND_COUNTS][Constants.General.ROUND_DATA_SIZE];
 
-    private static String[][] prepareRoundData() {
-        String[][] rounds = new String[Engine.ROUND_COUNTS][2];
-        Random random = new Random();
-
-        for (int i = 0; i < Engine.ROUND_COUNTS; i++) {
-            int number1 = random.nextInt(11);
-            int number2 = random.nextInt(11);
-            String[] operators = {"+", "-", "*"};
+        for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
+            int numberOne = random.nextInt(11);
+            int numberTwo = random.nextInt(11);
+            String[] operators = {Constants.Calc.ADDITION_OPERATOR, Constants.Calc.SUBTRACTION_OPERATOR, Constants.Calc.MULTIPLICATION_OPERATOR};
             String op = operators[random.nextInt(operators.length)];
 
             int correctAnswer = 0;
-            switch(op) {
+            switch (op) {
                 case "+":
-                    correctAnswer = number1 + number2;
+                    correctAnswer = numberOne + numberTwo;
                     break;
                 case "-":
-                    correctAnswer = number1 - number2;
+                    correctAnswer = numberOne - numberTwo;
                     break;
                 case "*":
-                    correctAnswer = number1 * number2;
+                    correctAnswer = numberOne * numberTwo;
                     break;
             }
-            rounds[i][0] = number1 + op + number2;
-            rounds[i][1] = Integer.toString(correctAnswer);
+            rounds[i][Constants.General.QUESTION_INDEX] = numberOne + op + numberTwo;
+            rounds[i][Constants.General.ANSWER_INDEX] = Integer.toString(correctAnswer);
         }
-        return rounds;
+        Engine.run(rules, rounds);
     }
 }

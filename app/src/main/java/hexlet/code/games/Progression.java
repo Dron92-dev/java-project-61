@@ -2,33 +2,30 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-import java.util.Scanner;
+import static hexlet.code.Engine.random;
+import static hexlet.code.util.Constants.Engine.ROUND_COUNTS;
+import static hexlet.code.util.Constants.General.ANSWER_INDEX;
+import static hexlet.code.util.Constants.General.QUESTION_INDEX;
+import static hexlet.code.util.Constants.General.ROUND_DATA_SIZE;
+import static hexlet.code.util.Constants.Progression.DEFAULT_LENGTH;
+import static hexlet.code.util.Constants.Progression.HIDDEN_ELEMENT;
+import static hexlet.code.util.Constants.Progression.MIN_LENGTH;
+import static hexlet.code.util.Constants.Progression.PROGRESSION_RULES;
 
 public class Progression {
-    private static final int MIN_LENGTH = 5;
-    private static final int DEFAULT_LENGTH = 10;
-    private static final Random random = new Random();
+    public static void playProgression() {
+        String[][] rounds = new String[ROUND_COUNTS][ROUND_DATA_SIZE];
 
-    public static void start(Scanner scanner, String userName) {
-        String rules = "What number is missing in the progression?";
-        String[][] roundsData = prepareRoundData();
-        Engine.run(rules, scanner, userName, roundsData);
-    }
-
-    private static String[][] prepareRoundData() {
-        String[][] rounds = new String[Engine.ROUND_COUNTS][2];
-
-        for (int i = 0; i < Engine.ROUND_COUNTS; i++) {
+        for (int i = 0; i < ROUND_COUNTS; i++) {
             int length = random.nextInt(DEFAULT_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
             int start = random.nextInt(20) + 1;
             int step = random.nextInt(10) + 1;
             int hiddenIndex = random.nextInt(length);
 
-            rounds[i][0] = generateProgression (start, step, length, hiddenIndex);
-            rounds[i][1] = String.valueOf(start + hiddenIndex * step);
+            rounds[i][QUESTION_INDEX] = generateProgression(start, step, length, hiddenIndex);
+            rounds[i][ANSWER_INDEX] = String.valueOf(start + hiddenIndex * step);
         }
-        return rounds;
+        Engine.run(PROGRESSION_RULES, rounds);
     }
 
     private static String generateProgression(int start, int step, int length, int hiddenIndex) {
@@ -36,7 +33,7 @@ public class Progression {
 
         for (int i = 0; i < length; i++) {
             if (i == hiddenIndex) {
-                sb.append(".. ");
+                sb.append(HIDDEN_ELEMENT).append(" ");
             } else {
                 sb.append(start + i * step).append(" ");
             }

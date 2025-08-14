@@ -32,30 +32,25 @@ public class App {
                 Cli.greetUser();
                 break;
             case Constants.App.EVEN:
-                Cli.greetUser();
                 Even.playEven();
                 break;
             case Constants.App.CALC:
-                Cli.greetUser();
                 Calc.playCalc();
                 break;
             case Constants.App.GCD:
-                Cli.greetUser();
                 GCD.playGCD();
                 break;
             case Constants.App.PROGRESSION:
-                Cli.greetUser();
                 Progression.playProgression();
                 break;
             case Constants.App.PRIME:
-                Cli.greetUser();
                 Prime.playPrime();
                 break;
             case Constants.App.EXIT:
-                System.out.println("You have left the game!");
+                System.out.println(Constants.App.EXIT_MESSAGE);
                 break;
             default:
-                System.out.println("Incorrect information entered");
+                System.out.println(Constants.App.INCORRECT_CHOICE_MESSAGE);
                 break;
         }
         scanner.close();

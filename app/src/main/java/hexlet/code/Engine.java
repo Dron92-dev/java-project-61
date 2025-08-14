@@ -10,6 +10,7 @@ import static hexlet.code.util.Constants.Engine.ROUND_COUNTS;
 public class Engine {
     public final static Random random = new Random();
     public static void run(String rules, String[][] questionsAndAnswers) {
+        GreetUtils.greetUser();
         Scanner scanner1 = new Scanner(System.in);
         System.out.println(rules);
 
@@ -25,10 +26,10 @@ public class Engine {
                 System.out.println(Constants.Engine.CORRECT_MESSAGE);
             } else {
                 System.out.println("'" + Answer + "'" + Constants.Engine.WRONG_ANSWER_MESSAGE + "'" + correctAnswer + "'");
-                System.out.println(Constants.Engine.TRY_AGAIN_MESSAGE + Cli.userName + "!");
+                System.out.println(Constants.Engine.TRY_AGAIN_MESSAGE + GreetUtils.userName + "!");
                 return;
             }
         }
-        System.out.println(Constants.Engine.CONGRATS_MESSAGE + Cli.userName + "!");
+        System.out.println(Constants.Engine.CONGRATS_MESSAGE + GreetUtils.userName + "!");
     }
 }

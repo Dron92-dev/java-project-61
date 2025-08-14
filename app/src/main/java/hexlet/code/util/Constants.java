@@ -7,8 +7,11 @@ public class Constants {
         public static final int ANSWER_INDEX = 1;
         public static final int ROUND_DATA_SIZE = 2;
     }
-    public static class App {
+    public static class GreetUtils {
+        public static final String HELLO_MESSAGE = "Hello, ";
         public static final String WELCOME_MESSAGE = "Welcome to the Brain Games!\nMay I have your name? ";
+    }
+    public static class App {
         public static final String INPUT_GAME_NUMBER = "Please enter the game number and press Enter.";
         public static final String MENU_GREET = "1 - Greet";
         public static final String MENU_EVEN = "2 - Even";
@@ -18,6 +21,8 @@ public class Constants {
         public static final String MENU_PRIME = "6 - Prime";
         public static final String MENU_EXIT = "0 - Exit";
         public static final String YOUR_CHOICE = "Your choice: ";
+        public static final String EXIT_MESSAGE = "You have left the game!";
+        public static final String INCORRECT_CHOICE_MESSAGE = "Incorrect information entered";
         public static final int GREET = 1;
         public static final int EVEN = 2;
         public static final int CALC = 3;
@@ -25,9 +30,6 @@ public class Constants {
         public static final int PROGRESSION = 5;
         public static final int PRIME = 6;
         public static final int EXIT = 0;
-    }
-    public static class Cli {
-        public static final String HELLO_MESSAGE = "Hello, ";
     }
     public static class Engine {
         public static final String QUESTION = "Question: ";

@@ -14,9 +14,9 @@ public class Calc {
             int numberOne = RANDOM.nextInt(Constants.General.MAX_RANDOM_NUMBER);
             int numberTwo = RANDOM.nextInt(Constants.General.MAX_RANDOM_NUMBER);
             String[] operators = {
-                    Constants.Calc.ADDITION_OPERATOR,
-                    Constants.Calc.SUBTRACTION_OPERATOR,
-                    Constants.Calc.MULTIPLICATION_OPERATOR
+                Constants.Calc.ADDITION_OPERATOR,
+                Constants.Calc.SUBTRACTION_OPERATOR,
+                Constants.Calc.MULTIPLICATION_OPERATOR
             };
             String op = operators[RANDOM.nextInt(operators.length)];
 

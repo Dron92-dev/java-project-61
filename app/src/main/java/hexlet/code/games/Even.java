@@ -12,8 +12,9 @@ public class Even {
 
         for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
             int number = RANDOM.nextInt(Constants.Even.MAX_NUMBER);
+            String answer = (number % 2 == 0) ? Constants.Even.EVEN_YES : Constants.Even.EVEN_NO;
             rounds[i][Constants.General.QUESTION_INDEX] = Integer.toString(number);
-            rounds[i][Constants.General.ANSWER_INDEX] = (number % 2 == 0) ? Constants.Even.EVEN_YES : Constants.Even.EVEN_NO;
+            rounds[i][Constants.General.ANSWER_INDEX] = answer;
         }
         Engine.run(rules, rounds);
     }

@@ -28,7 +28,7 @@ public class Calc {
                     correctAnswer = numberOne * numberTwo;
                     break;
             }
-            rounds[i][Constants.General.QUESTION_INDEX] = numberOne + op + numberTwo;
+            rounds[i][Constants.General.QUESTION_INDEX] = numberOne + " " + op + " " + numberTwo;
             rounds[i][Constants.General.ANSWER_INDEX] = Integer.toString(correctAnswer);
         }
         Engine.run(rules, rounds);

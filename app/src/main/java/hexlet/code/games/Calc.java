@@ -11,12 +11,16 @@ public class Calc {
         String[][] rounds = new String[Constants.Engine.ROUND_COUNTS][Constants.General.ROUND_DATA_SIZE];
 
         for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
-            int numberOne = RANDOM.nextInt(11);
-            int numberTwo = RANDOM.nextInt(11);
-            String[] operators = {Constants.Calc.ADDITION_OPERATOR, Constants.Calc.SUBTRACTION_OPERATOR, Constants.Calc.MULTIPLICATION_OPERATOR};
+            int numberOne = RANDOM.nextInt(Constants.General.MAX_RANDOM_NUMBER);
+            int numberTwo = RANDOM.nextInt(Constants.General.MAX_RANDOM_NUMBER);
+            String[] operators = {
+                    Constants.Calc.ADDITION_OPERATOR,
+                    Constants.Calc.SUBTRACTION_OPERATOR,
+                    Constants.Calc.MULTIPLICATION_OPERATOR
+            };
             String op = operators[RANDOM.nextInt(operators.length)];
 
-            int correctAnswer = 0;
+            int correctAnswer;
             switch (op) {
                 case "+":
                     correctAnswer = numberOne + numberTwo;
@@ -27,6 +31,8 @@ public class Calc {
                 case "*":
                     correctAnswer = numberOne * numberTwo;
                     break;
+                default:
+                    throw new IllegalArgumentException("Неизвестный оператор: " + op);
             }
             rounds[i][Constants.General.QUESTION_INDEX] = numberOne + " " + op + " " + numberTwo;
             rounds[i][Constants.General.ANSWER_INDEX] = Integer.toString(correctAnswer);

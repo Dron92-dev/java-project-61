@@ -11,7 +11,7 @@ public class Prime {
 
         for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
 
-            int number = RANDOM.nextInt(11);
+            int number = RANDOM.nextInt(Constants.General.MAX_RANDOM_NUMBER);
             String correctAnswer = isPrime(number) ? Constants.Prime.PRIME_YES : Constants.Prime.PRIME_NO;
 
             rounds[i][Constants.General.QUESTION_INDEX] = Integer.toString(number);

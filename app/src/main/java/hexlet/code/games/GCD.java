@@ -12,8 +12,8 @@ public class GCD {
 
         for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
 
-            int numberOne = RANDOM.nextInt(11);
-            int numberTwo = RANDOM.nextInt(11);
+            int numberOne = RANDOM.nextInt(Constants.General.MAX_RANDOM_NUMBER);
+            int numberTwo = RANDOM.nextInt(Constants.General.MAX_RANDOM_NUMBER);
 
             rounds[i][Constants.General.QUESTION_INDEX] = numberOne + " " + numberTwo;
             rounds[i][Constants.General.ANSWER_INDEX] = Integer.toString(gcd(numberOne, numberTwo));

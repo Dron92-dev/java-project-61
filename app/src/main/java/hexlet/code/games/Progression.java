@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.util.Constants;
 
 import static hexlet.code.Engine.RANDOM;
 import static hexlet.code.util.Constants.Engine.ROUND_COUNTS;
@@ -18,8 +19,8 @@ public class Progression {
 
         for (int i = 0; i < ROUND_COUNTS; i++) {
             int length = RANDOM.nextInt(DEFAULT_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
-            int start = RANDOM.nextInt(20) + 1;
-            int step = RANDOM.nextInt(10) + 1;
+            int start = RANDOM.nextInt(Constants.Progression.MAX_NUMBER_START) + 1;
+            int step = RANDOM.nextInt(Constants.Progression.MAX_NUMBER_STEP) + 1;
             int hiddenIndex = RANDOM.nextInt(length);
 
             rounds[i][QUESTION_INDEX] = generateProgression(start, step, length, hiddenIndex);

@@ -6,6 +6,7 @@ public class Constants {
         public static final int QUESTION_INDEX = 0;
         public static final int ANSWER_INDEX = 1;
         public static final int ROUND_DATA_SIZE = 2;
+        public static final int MAX_RANDOM_NUMBER = 11;
     }
 
     public static class GreetUtils {
@@ -48,6 +49,7 @@ public class Constants {
         public static final String EVEN_RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         public static final String EVEN_YES = "yes";
         public static final String EVEN_NO = "no";
+        public static final int MAX_NUMBER = 101;
     }
 
     public static class Calc {
@@ -65,6 +67,8 @@ public class Constants {
         public static final String HIDDEN_ELEMENT = "..";
         public static final int MIN_LENGTH = 5;
         public static final int DEFAULT_LENGTH = 10;
+        public static final int MAX_NUMBER_START = 20;
+        public static final int MAX_NUMBER_STEP = 10;
     }
 
     public static class Prime {

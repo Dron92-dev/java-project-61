@@ -35,7 +35,7 @@ public class Constants {
         public static final String QUESTION = "Question: ";
         public static final String ANSWER = "Your answer: ";
         public static final String WRONG_ANSWER_MESSAGE = " is wrong answer ;(. Correct answer was ";
-        public static final String TRY_AGAIN_MESSAGE = "Let's try again ";
+        public static final String TRY_AGAIN_MESSAGE = "Let's try again, ";
         public static final String CORRECT_MESSAGE = "Correct!";
         public static final String CONGRATS_MESSAGE = "Congratulations, ";
         public static final int ROUND_COUNTS = 3;

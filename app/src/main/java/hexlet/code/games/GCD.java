@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.util.Constants;
 
-import static hexlet.code.Engine.random;
+import static hexlet.code.Engine.RANDOM;
 
 public class GCD {
     public static void playGCD() {
@@ -12,14 +12,15 @@ public class GCD {
 
         for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
 
-            int numberOne = random.nextInt(11);
-            int numberTwo = random.nextInt(11);
+            int numberOne = RANDOM.nextInt(11);
+            int numberTwo = RANDOM.nextInt(11);
 
             rounds[i][Constants.General.QUESTION_INDEX] = numberOne + " " + numberTwo;
             rounds[i][Constants.General.ANSWER_INDEX] = Integer.toString(gcd(numberOne, numberTwo));
         }
         Engine.run(rules, rounds);
     }
+
     private static int gcd(int a, int b) {
         while (b != 0) {
             int temp = b;

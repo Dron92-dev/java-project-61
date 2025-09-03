@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.util.Constants;
 
-import static hexlet.code.Engine.random;
+import static hexlet.code.Engine.RANDOM;
 
 public class Calc {
     public static void playCalc() {
@@ -11,10 +11,10 @@ public class Calc {
         String[][] rounds = new String[Constants.Engine.ROUND_COUNTS][Constants.General.ROUND_DATA_SIZE];
 
         for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
-            int numberOne = random.nextInt(11);
-            int numberTwo = random.nextInt(11);
+            int numberOne = RANDOM.nextInt(11);
+            int numberTwo = RANDOM.nextInt(11);
             String[] operators = {Constants.Calc.ADDITION_OPERATOR, Constants.Calc.SUBTRACTION_OPERATOR, Constants.Calc.MULTIPLICATION_OPERATOR};
-            String op = operators[random.nextInt(operators.length)];
+            String op = operators[RANDOM.nextInt(operators.length)];
 
             int correctAnswer = 0;
             switch (op) {

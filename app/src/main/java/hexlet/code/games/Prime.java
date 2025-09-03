@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.util.Constants;
 
-import static hexlet.code.Engine.random;
+import static hexlet.code.Engine.RANDOM;
 
 public class Prime {
     public static void playPrime() {
@@ -11,7 +11,7 @@ public class Prime {
 
         for (int i = 0; i < Constants.Engine.ROUND_COUNTS; i++) {
 
-            int number = random.nextInt(11);
+            int number = RANDOM.nextInt(11);
             String correctAnswer = isPrime(number) ? Constants.Prime.PRIME_YES : Constants.Prime.PRIME_NO;
 
             rounds[i][Constants.General.QUESTION_INDEX] = Integer.toString(number);

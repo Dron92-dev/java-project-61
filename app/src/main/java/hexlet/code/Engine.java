@@ -8,7 +8,8 @@ import java.util.Scanner;
 import static hexlet.code.util.Constants.Engine.ROUND_COUNTS;
 
 public class Engine {
-    public final static Random random = new Random();
+    public final static Random RANDOM = new Random();
+
     public static void run(String rules, String[][] questionsAndAnswers) {
         GreetUtils.greetUser();
         Scanner scanner1 = new Scanner(System.in);
@@ -20,12 +21,12 @@ public class Engine {
 
             System.out.println(Constants.Engine.QUESTION + question);
             System.out.print(Constants.Engine.ANSWER);
-            String Answer = scanner1.nextLine();
+            String answer = scanner1.nextLine();
 
-            if (Answer.toLowerCase().equals(correctAnswer)) {
+            if (answer.toLowerCase().equals(correctAnswer)) {
                 System.out.println(Constants.Engine.CORRECT_MESSAGE);
             } else {
-                System.out.println("'" + Answer + "'" + Constants.Engine.WRONG_ANSWER_MESSAGE + "'" + correctAnswer + "'");
+                System.out.println("'" + answer + "'" + Constants.Engine.WRONG_ANSWER_MESSAGE + "'" + correctAnswer + "'");
                 System.out.println(Constants.Engine.TRY_AGAIN_MESSAGE + GreetUtils.userName + "!");
                 return;
             }

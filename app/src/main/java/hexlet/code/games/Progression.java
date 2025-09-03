@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.random;
+import static hexlet.code.Engine.RANDOM;
 import static hexlet.code.util.Constants.Engine.ROUND_COUNTS;
 import static hexlet.code.util.Constants.General.ANSWER_INDEX;
 import static hexlet.code.util.Constants.General.QUESTION_INDEX;
@@ -17,10 +17,10 @@ public class Progression {
         String[][] rounds = new String[ROUND_COUNTS][ROUND_DATA_SIZE];
 
         for (int i = 0; i < ROUND_COUNTS; i++) {
-            int length = random.nextInt(DEFAULT_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
-            int start = random.nextInt(20) + 1;
-            int step = random.nextInt(10) + 1;
-            int hiddenIndex = random.nextInt(length);
+            int length = RANDOM.nextInt(DEFAULT_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
+            int start = RANDOM.nextInt(20) + 1;
+            int step = RANDOM.nextInt(10) + 1;
+            int hiddenIndex = RANDOM.nextInt(length);
 
             rounds[i][QUESTION_INDEX] = generateProgression(start, step, length, hiddenIndex);
             rounds[i][ANSWER_INDEX] = String.valueOf(start + hiddenIndex * step);

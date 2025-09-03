@@ -29,3 +29,23 @@ make run
 ```bash
 make test
 ```
+
+## Demo Game №2 "Проверка на четность"
+
+[![asciicast](https://asciinema.org/a/Wq5JyopB7Gktbn0hdnq6H2MMZ.svg)](https://asciinema.org/a/Wq5JyopB7Gktbn0hdnq6H2MMZ)
+
+## Demo Game №3 "Калькулятор"
+
+[![asciicast](https://asciinema.org/a/Sjb5i2truj5kICJHgUioTV0ZD.svg)](https://asciinema.org/a/Sjb5i2truj5kICJHgUioTV0ZD)
+
+## Demo Game №4 "Наименьший общий делитель"
+
+[![asciicast](https://asciinema.org/a/BeN8PkEP58kjTeUpBkA1jDNte.svg)](https://asciinema.org/a/BeN8PkEP58kjTeUpBkA1jDNte)
+
+## Demo Game №5 "Арифметическая прогрессия"
+
+[![asciicast](https://asciinema.org/a/N7HH6FPvimfVgKklKcD4Uqc8D.svg)](https://asciinema.org/a/N7HH6FPvimfVgKklKcD4Uqc8D)
+
+## Demo Game №6 "Простое ли число?"
+
+[![asciicast](https://asciinema.org/a/aCQJr1vfyadgx2XiWGmEN73IO.svg)](https://asciinema.org/a/aCQJr1vfyadgx2XiWGmEN73IO)

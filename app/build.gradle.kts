@@ -35,6 +35,6 @@ sonar {
         property("sonar.projectKey", "Dron92-dev_java-project-61")
         property("sonar.organization", "dron92-dev")
         property("sonar.host.url", "https://sonarcloud.io")
-        property("sonar.token", "96df948097207eb880ad95a5a263e889dd3672c7")
+        property("sonar.token", "cd2462295e6b72b91a9e731e7ec3807376ee658b")
     }
 }
